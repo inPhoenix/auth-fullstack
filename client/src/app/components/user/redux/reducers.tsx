@@ -58,9 +58,9 @@ export const signUp = (values = {}) => {
     if (err) {
       const safeError = {
         response: {
-          data: {}
-        },
-        ...err
+          data: {},
+          ...err.response
+        }
       }
       errorLog(safeError.response.data)
       await dispatch(errorHandling())
@@ -166,7 +166,7 @@ export const errorHandling = () => {
 }
 
 const errorLog = (error: any) => {
-  console.log(" Error: ", "background: red; color: yellow", error)
+  console.log("%c Error: ", "background: red; color: yellow", error)
 }
 
 // utility function to catch errors

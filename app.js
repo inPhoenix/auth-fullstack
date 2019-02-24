@@ -10,13 +10,20 @@ const log = console.log
 
 const app = express()
 
-const origin = process.env.MODE === 'production' ?
-  'https://auth-fullstack.herokuapp.com' :
-  'http://localhost:3000';
+// const origin = process.env.MODE === 'production' ?
+//   'https://auth-fullstack.herokuapp.com' :
+//   'http://localhost:3000';
 
 // middleware
 app.use(bodyParser.json())
-app.use(cors({ origin, credentials: true }));
+// app.use(cors({ origin, credentials: true }));
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", '*');
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+  next();
+});
 app.use(cookieParser())
 app.use("/user", user)
 
