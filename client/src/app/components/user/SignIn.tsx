@@ -135,7 +135,7 @@ class SignIn extends Component<any, IState> {
                 </div>
               )}
               <div className="new-account-text-container">
-                Dont Have an Account?
+                Don't Have an Account?
                 <div>
                   <Link to={"/signUp"}>Register</Link>
                 </div>
