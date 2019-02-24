@@ -1,0 +1,5 @@
+{
+  "/user": "api docs",
+  "/user/all": "GET - list all users",
+  "/user/new": "POST - create new user"
+}

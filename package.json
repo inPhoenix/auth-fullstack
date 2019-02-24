@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "homepage" : "https://auth-fullstack.herokuapp.com/",
+  "scripts": {
+    "configure": "./bin/configuredb.sh",
+    "start": "NODE_ENV=production node ./bin/index.js",
+    "client": "npm run start --prefix client",
+    "server": "nodemon ./bin/index.js",
+    "dev": "concurrently \"nodemon ./bin/index.js\" \"npm run client\"",
+    "build": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "heroku-postbuild": "cd client && yarn && yarn run build",
+    "config-heroku-var": "heroku config:set DB_PASSWORD=\"$(cat DB_PASSWORD.secret)\""
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10",
+    "prettier": "^1.16.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chalk": "^2.4.2",
+    "concurrently": "^4.1.0",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.16.4",
+    "pg": "7.4.3",
+    "uuid": "^3.3.2"
+  }
+}
