@@ -1,5 +1,8 @@
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: 'http://localhost:3000/user'
+  baseURL: 'https://auth-fullstack.herokuapp.com/user/'
 })
+
+// For Local Environment:
+// baseURL: 'http://localhost:3000/user'

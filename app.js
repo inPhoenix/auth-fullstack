@@ -10,7 +10,7 @@ const log = console.log
 
 const app = express()
 
-// const origin = process.env.MODE === 'production' ?
+// const origin = process.env.NODE_ENV === 'production' ?
 //   'https://auth-fullstack.herokuapp.com' :
 //   'http://localhost:3000';
 
