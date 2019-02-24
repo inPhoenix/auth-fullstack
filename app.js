@@ -12,7 +12,7 @@ const app = express()
 
 const origin = process.env.MODE === 'production' ?
   'https://auth-fullstack.herokuapp.com' :
-  'http://localhost:5000';
+  'http://localhost:3000';
 
 // middleware
 app.use(bodyParser.json())

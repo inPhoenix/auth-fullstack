@@ -1,0 +1,103 @@
+.error-container {
+  position: absolute;
+  top: 0;
+  font-size: 1.1rem;
+  top: -20px;
+  color: yellow;
+}
+
+.error-submit-container {
+  padding-top: 12px;
+  font-size: 1.2rem;
+  color: #ff725e;
+}
+
+.loading-container {
+  color: #17ff0e;
+  font-size: 1.1rem;
+}
+
+.credentials-container {
+  position: absolute;
+  top: 0;
+}
+
+.login-box {
+  height: 100vh;
+  opacity: 0.95;
+  margin-left: 30px;
+  background-color: #232748;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  .input-field {
+    font-size: 1.5rem;
+    background-color: #3b4148;
+    border-radius: 0px 3px 3px 0px;
+    color: #a9a9a9;
+    margin-bottom: 1.5em;
+    padding: 0 16px;
+    width: 235px;
+    height: 50px;
+  }
+}
+
+.login-inputs {
+  margin-top: 100px;
+}
+
+.field-group {
+  position: relative;
+  margin: 7px 0 10px 5px;
+  margin: 20px 0;
+  transition: 0.3s ease all;
+  padding: 25px 0;
+
+  input:focus + .fg-label
+  {
+    top: -25px;
+    left: 4px;
+    font-size: 1.1rem;
+    color: white;
+  }
+
+  input + .filled
+  {
+    top: -25px;
+    left: 4px;
+    font-size: 1.1rem;
+    color: white;
+  }
+
+
+  .fg-label {
+    position: absolute;
+    top: 18px;
+    left: 15px;
+    font-size: 1.1rem;
+    pointer-events: none;
+    transition: 0.3s ease all;
+    color: white;
+  }
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+}
+
+.new-account-text-container {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  color: white;
+  margin-top: 50px;
+  a {
+    color: yellow;
+  }
+
+
+}

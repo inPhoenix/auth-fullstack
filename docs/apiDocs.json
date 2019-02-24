@@ -1,5 +1,7 @@
 {
-  "/user": "api docs",
   "/user/all": "GET - list all users",
+  "/user/login": "POST - login",
+  "/user/logout": "GET - logout",
+  "/user/authenticated": "GET - check if authenticated",
   "/user/new": "POST - create new user"
 }

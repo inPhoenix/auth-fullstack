@@ -1,0 +1,29 @@
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-config-prettier"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "coverage/**/*.js",
+      "node_modules/**/*.ts"
+    ]
+  },
+  "rules": {
+    "interface-name": [
+      true,
+      "never-prefix"
+    ],
+    "no-implicit-dependencies": [
+      true,
+      "dev"
+    ],
+    "max-classes-per-file": [false, 1],
+    "no-submodule-imports": [
+      false
+    ],
+    "no-default-export": true,
+    "object-literal-sort-keys": false,
+    "semicolon": [true, "never"]
+  }
+}
