@@ -105,8 +105,10 @@ export const checkAuthentication = () => {
 
     if (err) {
       const safeError = {
-        data: {},
-        ...err
+        response: {
+          data: {},
+          ...err.response
+        }
       }
       errorLog(safeError.response.data)
       await dispatch(setLoading(false))
