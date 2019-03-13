@@ -9,7 +9,7 @@
 Live: 
 [https://auth-fullstack.herokuapp.com](https://auth-fullstack.herokuapp.com)
 
-A authentication App with React/Node/PostgreSQL
+A cookie-based authentication App with React/Node/PostgreSQL
 
 - [x] NodeJs
 - [x] ExpressJs

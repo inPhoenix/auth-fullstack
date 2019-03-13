@@ -1,0 +1,54 @@
+@import "./base";
+
+.form-container {
+  position: absolute;
+  top: 10%;
+  left: calc(350px + 20%);
+  background: $white;
+  width: 600px;
+  height: 500px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  display: flex;
+}
+
+.sign-up-form {
+  width: 50%;
+  background: #232328;
+  padding: 120px 50px;
+  box-sizing: border-box;
+  font-family: $font-tertiary;
+  font-size: 18px;
+  letter-spacing: 1px;
+  p {
+    color: $white;
+    font-weight: 200;
+    margin-bottom: 8px;
+  }
+  label {
+    color: $white;
+    font-size: 15px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}
+
+
+.form-input {
+  width: 200px;
+  font-family: $font-tertiary;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #cc683c;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid $white;
+  margin-bottom: 30px;
+  outline: none;
+  padding: 10px 0;
+  transition: border-bottom-color .8s;
+  &:focus {
+    border-bottom-color: #cc683c;
+  }
+}
+

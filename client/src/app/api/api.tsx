@@ -1,8 +1,10 @@
 import axios from 'axios'
 
-export default axios.create({
-  baseURL: 'https://auth-fullstack.herokuapp.com/user/'
-})
+let url = 'http://localhost:3000/user'
+if (process.env.NODE_ENV === "production") {
+  url ='https://auth-fullstack.herokuapp.com/user/'
+}
 
-// For Local Environment:
-// baseURL: 'http://localhost:3000/user'
+export default axios.create({
+  baseURL: url
+})

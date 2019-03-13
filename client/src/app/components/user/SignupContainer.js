@@ -8,7 +8,6 @@ const ASSETS = `${process.env.PUBLIC_URL}/assets`
 
 class SignupContainer extends Component {
   handleSubmit = values => {
-    console.log(" hi", "background: red")
     this.props.signUpAction(values)
   }
   render() {

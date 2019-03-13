@@ -80,7 +80,9 @@ export const signOut = () => {
 
     if (err) {
       const safeError = {
-        data: {},
+        response: {
+          data: {}
+        },
         ...err
       }
       errorLog(safeError.response.data)
@@ -104,9 +106,12 @@ export const checkAuthentication = () => {
     let [err, response] = await to(api.get("/authenticated"))
 
     if (err) {
+      console.log('%c err', 'background: red', err)
       const safeError = {
-        data: {},
-        ...err
+        response: {
+          data: {}
+        },
+        ...err.response
       }
       errorLog(safeError.response.data)
       await dispatch(setLoading(false))

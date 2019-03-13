@@ -12,7 +12,7 @@ const LoginContainer = styled.div<IMyImageProps>`
   color: #606468;
   height: 100vh;
   flex: 1;
-  background: url(${props => props.back});
+  background: linear-gradient(rgba(35,39,72,0.9), rgba(35,39,72,0.4)), url(${props => props.back});
   background-repeat: no-repeat;
   background-color: black;
   background-size: cover;
