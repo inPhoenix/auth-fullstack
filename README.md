@@ -33,12 +33,23 @@ A cookie-based authentication App with React/Node/PostgreSQL
 ./client/src/app    # App
   ⌙ components      # SignIn and Signup pages
   ⌙ scenes          # Main Pages
+  ⌙ api             # api endpoint config
   ⌙ store           # Redux Main Files
 ./client/src/sass   # Styles
 ./client/src/design # Atoms/Organism Pages
 ```  
 
-A full stacker authentication system with NodeJs/ReactJs/PostgreSQL
+#Summary
+
+This projects uses a cookie-based authentication.
+
+The steps for the authentication is listed as:
+
+1. User enters their login credentials.
+2. Server verifies the credentials are correct and creates a session which is then stored in a database.
+3. A cookie with the session ID is placed in the users browser.
+4. On subsequent requests, the session ID is verified against the database and if valid the request processed.
+5. Once a user logs out of the app, the session is destroyed both client-side and server-side.
 
 
 ### Deployment Notes:
