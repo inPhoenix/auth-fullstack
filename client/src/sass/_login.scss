@@ -1,18 +1,19 @@
-@import './base.scss';
-
+@import "./base.scss";
 
 /* Login Banner */
 
 .banner {
   display: flex;
-  display: none; //temp
+  &.disable {
+    display: none;
+  }
   border: #232748 1px hidden;
   color: #e7f5ff;
   width: 500px;
   position: absolute;
   top: 20%;
   left: calc(400px + 20%);
-  @media(max-width: 930px) {
+  @media (max-width: 930px) {
     display: none;
   }
   flex-direction: column;
@@ -28,7 +29,21 @@
   border-top: 7px solid #232748;
   border-bottom: 7px solid #232748;
 }
-
+.header {
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+.header-inner {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-family: $font-secondary;
+  text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+    #ff2d95 0px 0px 20px, #ff2d95 0px 0px 30px, #ff2d95 0px 0px 40px,
+    #ff2d95 0px 0px 50px, #ff2d95 0px 0px 75px;
+}
 .arrow {
   font-size: 40px;
   margin-bottom: 20px;
@@ -48,25 +63,35 @@
   border: 2px solid #d8eeff;
   outline: none;
   cursor: pointer;
-  transition: transform .3s;
+  transition: transform 0.3s;
   &:hover {
     transform: translateY(-1px);
   }
 }
 
 @keyframes anim {
-  0% { transform: translateY(0)}
-  20% { transform: translateY(0)}
-  40% { transform: translateY(-5px)}
-  50% { transform: translateY(0)}
-  60% { transform: translateY(-10px)}
-  80% { transform: translateY(0)}
-  100% { transform: translateY(0)}
-
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
-
-
-
 
 /* Login */
 
@@ -147,7 +172,7 @@
   a {
     color: yellow;
   }
-  @media(max-width: 930px) {
+  @media (max-width: 930px) {
     display: block;
   }
 }
