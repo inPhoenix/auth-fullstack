@@ -5,7 +5,17 @@ import { changeTheme } from "../themes/redux/reducer"
 import { IRootState } from "../store/configureStore"
 import { withRouter, RouteComponentProps } from "react-router-dom"
 import { LoginContainer } from "../../designs/organisms/LoginContainer"
+import styled from "styled-components"
 const ASSETS = `${process.env.PUBLIC_URL}/assets`
+
+interface IMyImageProps {
+  back?: string,
+}
+
+const Header = styled.div<IMyImageProps>`
+width: 50%;
+background: linear-gradient(rgba(35,39,72,0.9), rgba(35,39,72,0.4)), url(${props => props.back});
+`
 
 interface IStateFromProps {}
 
@@ -52,10 +62,14 @@ class Login extends Component<IProps> {
               <label>Yes</label>
               <button type="button">Sign Up Here</button>
             </form>
-            <div className="header">
-              <h1>Welcome to Code and Create</h1>
-            </div>
+
+            <Header back={`${ASSETS}/wallpapers/mobilelogin.jpg`}>
+              Welcome to Registration
+            </Header>
+            <div className="x-btn">
+
             &#10005;
+            </div>
           </div>
         </div>
 
