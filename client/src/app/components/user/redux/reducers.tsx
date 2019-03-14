@@ -106,12 +106,11 @@ export const checkAuthentication = () => {
     let [err, response] = await to(api.get("/authenticated"))
 
     if (err) {
-      console.log('%c err', 'background: red', err)
+      console.log("%c err", "background: red", err)
       const safeError = {
         response: {
-          data: {}
+          data: {},
           ...err.response
-        },
         }
       }
       errorLog(safeError.response.data)
