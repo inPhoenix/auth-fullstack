@@ -1,0 +1,113 @@
+@import "./base";
+
+.form-container {
+  display: none;
+  &.enable {
+    display: flex;
+    width: 50%;
+  }
+  position: absolute;
+  top: 10%;
+  left: calc(350px + 20%);
+  background: $white;
+  width: 700px;
+  height: 500px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.sign-up-form {
+  width: 60%;
+  background: #232328;
+  padding: 120px 50px;
+  box-sizing: border-box;
+  font-family: $font-tertiary;
+  font-size: 18px;
+  letter-spacing: 1px;
+  p {
+    color: $white;
+    font-weight: 200;
+    margin-bottom: 8px;
+  }
+  label {
+    color: $white;
+    font-size: 15px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  button {
+    display: block;
+    margin-top: 60px;
+    width: 150px;
+    padding: 10px 10px;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    outline: none;
+    font-family: $font-secondary;
+    cursor: pointer;
+  }
+  input[type="checkbox"] {
+    transition: background-color 0.5s;
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 15px;
+    background-color: #eee;
+    outline: none;
+    border-radius: 20px;
+    margin: 0 8px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+  }
+
+  input:checked[type="checkbox"] {
+    background-color: $color-primary;
+  }
+
+  input:checked[type="checkbox"]::before {
+    left: 18px;
+  }
+
+  input[type="checkbox"]::before {
+    content: "";
+    width: 17px;
+    height: 17px;
+    background-color: #aaa;
+    position: absolute;
+    border-radius: 50%;
+    top: -1px;
+    left: -4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    transition: left 0.5s;
+  }
+}
+
+.form-input {
+  width: 200px;
+  font-family: $font-tertiary;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #cc683c;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid $white;
+  margin-bottom: 30px;
+  outline: none;
+  padding: 10px 0;
+  transition: border-bottom-color 0.8s;
+  &:focus {
+    border-bottom-color: #cc683c;
+  }
+}
+
+.x-btn {
+  position: absolute;
+  bottom: -6%;
+  right: 1%;
+  color: $white;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}

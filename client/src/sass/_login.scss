@@ -1,26 +1,99 @@
-.error-container {
+@import "./base.scss";
+
+/* Login Banner */
+
+.banner {
+  display: flex;
+  &.disable {
+    display: none;
+  }
+  border: #232748 1px hidden;
+  color: #e7f5ff;
+  width: 500px;
   position: absolute;
-  top: 0;
-  font-size: 1.1rem;
-  top: -20px;
-  color: yellow;
+  top: 20%;
+  left: calc(400px + 20%);
+  @media (max-width: 930px) {
+    display: none;
+  }
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.error-submit-container {
-  padding-top: 12px;
-  font-size: 1.2rem;
-  color: #ff725e;
+.banner-heading {
+  font-family: $font-secondary;
+  font-size: 3rem;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+  border-top: 7px solid #232748;
+  border-bottom: 7px solid #232748;
+}
+.header {
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+.header-inner {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-family: $font-secondary;
+  text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+    #ff2d95 0px 0px 20px, #ff2d95 0px 0px 30px, #ff2d95 0px 0px 40px,
+    #ff2d95 0px 0px 50px, #ff2d95 0px 0px 75px;
+}
+.arrow {
+  font-size: 40px;
+  margin-bottom: 20px;
+  animation: anim 3s infinite;
 }
 
-.loading-container {
-  color: #17ff0e;
-  font-size: 1.1rem;
+.banner-btn {
+  width: 200px;
+  padding: 15px;
+  font-family: $font-secondary;
+  font-size: 17px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: transparent;
+  color: #fff;
+  //border-radius: 50px;
+  border: 2px solid #d8eeff;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+  &:hover {
+    transform: translateY(-1px);
+  }
 }
 
-.credentials-container {
-  position: absolute;
-  top: 0;
+@keyframes anim {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
+
+/* Login */
 
 .login-box {
   height: 100vh;
@@ -91,6 +164,7 @@
 }
 
 .new-account-text-container {
+  display: none;
   font-size: 1.2rem;
   line-height: 1.5rem;
   color: white;
@@ -98,4 +172,31 @@
   a {
     color: yellow;
   }
+  @media (max-width: 930px) {
+    display: block;
+  }
+}
+
+.error-container {
+  position: absolute;
+  top: 0;
+  font-size: 1.1rem;
+  top: -20px;
+  color: yellow;
+}
+
+.error-submit-container {
+  padding-top: 12px;
+  font-size: 1.2rem;
+  color: #ff725e;
+}
+
+.loading-container {
+  color: #17ff0e;
+  font-size: 1.1rem;
+}
+
+.credentials-container {
+  position: absolute;
+  top: 0;
 }
