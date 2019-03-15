@@ -179,9 +179,15 @@
 
 .error-container {
   position: absolute;
-  top: 0;
   font-size: 1.1rem;
   top: -20px;
+  color: yellow;
+}
+
+.error-container-middle {
+  position: absolute;
+  font-size: 1.1rem;
+  top: 90px;
   color: yellow;
 }
 

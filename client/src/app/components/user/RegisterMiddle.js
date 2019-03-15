@@ -17,6 +17,28 @@ const Header = styled.div`
     url(${props => props.back}) center no-repeat;
 `
 
+const renderField = ({
+  input,
+  label,
+  type,
+  meta: { touched, error, warning, active }
+}) => {
+  return (
+    <>
+      <input
+        className="form-input"
+        placeholder={label}
+        type="text"
+        type={type}
+        {...input}
+      />
+      {touched && error && !active && (
+        <nav className="error-container-middle">{error}</nav>
+      )}
+    </>
+  )
+}
+
 class RegisterMiddle extends Component {
   state = {
     showLogin: false,
@@ -33,13 +55,28 @@ class RegisterMiddle extends Component {
 
   disableRegister = () => {
     this.setState(() => ({
-      showLogin: false
+      showLogin: false,
+      inputFocusEmail: false,
+      inputFocusPassword: false
     }))
+  }
+
+  onBlur = fieldName => {
+    if (fieldName === "email") {
+      return this.setState({
+        inputFocusEmail: false
+      })
+    }
+    if (fieldName === "password") {
+      this.setState({
+        inputFocusPassword: false
+      })
+    }
   }
 
   handleOnChange = () => {
     this.setState(prevState => ({
-      showLogin: !prevState.checkbox
+      checkbox: !prevState.checkbox
     }))
   }
 
@@ -72,7 +109,7 @@ class RegisterMiddle extends Component {
   }
   render() {
     const { showLogin } = this.state
-    const { formValues, handleSubmit } = this.props
+    const { handleSubmit } = this.props
     return (
       <div>
         <div className="login-container">
@@ -95,10 +132,10 @@ class RegisterMiddle extends Component {
               <Field
                 name="username"
                 type="text"
-                className="form-input"
-                placeholder="Email"
-                component="input"
+                label="Email"
+                component={renderField}
                 validate={emailValidation}
+                onBlur={() => this.onBlur("email")}
                 onFocus={() => this.onFocus("email")}
               />
               <Field
@@ -107,17 +144,13 @@ class RegisterMiddle extends Component {
                 type="password"
                 className="form-input"
                 placeholder="Password"
+                onBlur={() => this.onBlur("password")}
                 onFocus={() => this.onFocus("password")}
               />
-              {/*<input
-                type="email"
-                className="form-input"
-                placeholder="Email Address"
-              />*/}
-              <p>Already Have an Account?</p>
-              <label>No</label>
-              <input onChange={this.handleOnChange} type="checkbox" />
+              <p>Login after Register?</p>
               <label>Yes</label>
+              <input onChange={this.handleOnChange} type="checkbox" />
+              <label>No</label>
               <button type="submit">Sign Up Here</button>
             </form>
 

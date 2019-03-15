@@ -52,6 +52,22 @@ The steps for the authentication is listed as:
 5. Once a user logs out of the app, the session is destroyed both client-side and server-side.
 
 
+### Run
+
+In the project directory, install the node modules in server and client:
+
+```shell
+yarn
+yarn --cwd client
+```
+
+Then run the concurrently script to start both server and client:
+```shell
+yarn run dev
+```
+
+A browser will be open at http://localhost:3000
+
 ### Deployment Notes:
 
 Heroku Deployment
@@ -65,7 +81,8 @@ Create DB_PASSWORD with the correct instance password.
 
 Update the secrets/db_configuration.js file.
 
-Always run:
+Heroku commands:
 
+    heroku git:remote -a auth-fullstack
     git push heroku master
     heroku logs --tail
