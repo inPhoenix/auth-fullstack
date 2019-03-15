@@ -15,7 +15,7 @@ class RegisterMiddleContainer extends Component {
   render() {
     const { user } = this.props
     return (
-      <div className="login-box">
+      <div>
         <RegisterMiddle onSubmit={this.handleSubmit} />
       </div>
     )
