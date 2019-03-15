@@ -39,7 +39,7 @@ A cookie-based authentication App with React/Node/PostgreSQL
 ./client/src/design # Atoms/Organism Pages
 ```  
 
-#Summary
+# Summary
 
 This projects uses a cookie-based authentication.
 
