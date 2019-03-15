@@ -3,6 +3,7 @@
 /* Login Banner */
 
 .banner {
+  position: absolute;
   display: flex;
   &.disable {
     display: none;
@@ -10,7 +11,6 @@
   border: #232748 1px hidden;
   color: #e7f5ff;
   width: 500px;
-  position: absolute;
   top: 20%;
   left: calc(400px + 20%);
   @media (max-width: 930px) {
